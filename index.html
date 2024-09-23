@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario para Información del Footer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        textarea {
+            height: 100px;
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Formulario para Información del Footer - E-commerce de Stickers</h2>
+    <p>Por favor, complete el siguiente formulario con la información necesaria para agregar al footer de su sitio web.</p>
+
+    <form id="footerForm">
+        <!-- Sección de Política de Devoluciones -->
+        <div class="form-section">
+            <label for="devoluciones">Política de Devoluciones</label>
+            <textarea id="devoluciones" name="devoluciones" placeholder="Describa los plazos y condiciones para devoluciones..."></textarea>
+        </div>
+
+        <!-- Sección de Política de Envíos -->
+        <div class="form-section">
+            <label for="envios">Política de Envíos</label>
+            <textarea id="envios" name="envios" placeholder="Especifique las zonas de entrega, tiempos estimados y costos de envío..."></textarea>
+        </div>
+
+        <!-- Sección de Métodos de Pago -->
+        <div class="form-section">
+            <label for="pagos">Métodos de Pago</label>
+            <textarea id="pagos" name="pagos" placeholder="Indique los métodos de pago aceptados y medidas de seguridad..."></textarea>
+        </div>
+
+        <!-- Sección de Términos y Condiciones -->
+        <div class="form-section">
+            <label for="tyc">Términos y Condiciones (T&C)</label>
+            <textarea id="tyc" name="tyc" placeholder="Indique los términos y condiciones de uso del sitio..."></textarea>
+        </div>
+
+        <!-- Sección de Tratamiento de Datos -->
+        <div class="form-section">
+            <label for="datos">Política de Tratamiento de Datos</label>
+            <textarea id="datos" name="datos" placeholder="Describa cómo se manejarán los datos personales según la ley 1581 de 2012..."></textarea>
+        </div>
+
+        <!-- Sección de Contacto -->
+        <div class="form-section">
+            <label for="contacto">Información de Contacto</label>
+            <input type="text" id="contacto" name="contacto" placeholder="Número de teléfono o correo electrónico para atención al cliente...">
+        </div>
+
+        <!-- Sección de Redes Sociales -->
+        <div class="form-section">
+            <label for="redes">Redes Sociales</label>
+            <textarea id="redes" name="redes" placeholder="Proporcione los enlaces a las redes sociales de la empresa..."></textarea>
+        </div>
+
+        <!-- Botón para enviar el formulario -->
+        <button type="submit" class="submit-btn">Enviar Información</button>
+    </form>
+
+    <script>
+        // Aquí podrías añadir un script para convertir el formulario a PDF usando jsPDF
+        document.getElementById('footerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Formulario enviado. ¡Gracias!');
+            // Integrar jsPDF para generar PDF del formulario si es necesario
+        });
+    </script>
+</body>
+</html>
