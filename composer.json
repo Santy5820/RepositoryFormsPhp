@@ -1,0 +1,20 @@
+{
+    "name": "cabre/forms",
+    "description": "Formulario de envio a Mail con PHP",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Cabre\\Forms\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Santiago Cabrera",
+            "email": "cabreraarizasantiago@gmail.com"
+        }
+    ]
+}
