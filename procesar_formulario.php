@@ -13,6 +13,13 @@ $tyc = $_POST['tyc'];
 $datos = $_POST['datos'];
 $contacto = $_POST['contacto'];
 $redes = $_POST['redes'];
+$correo_cliente = $_POST['correo_cliente']; // Nuevo campo para el correo del cliente
+
+// Validar el correo del cliente
+if (!filter_var($correo_cliente, FILTER_VALIDATE_EMAIL)) {
+    echo "El correo del cliente no es válido.";
+    exit;
+}
 
 // Instanciar PHPMailer
 $mail = new PHPMailer(true);
@@ -20,16 +27,17 @@ $mail = new PHPMailer(true);
 try {
     // Configuración del servidor de correo
     $mail->isSMTP();
-    $mail->Host = 'smtp.tu-servidor.com'; // Servidor SMTP
+    $mail->Host = 'smtp.hostinger.com'; // Servidor SMTP
     $mail->SMTPAuth = true;
-    $mail->Username = 'tu-correo@tu-dominio.com'; // Correo desde el cual enviarás
-    $mail->Password = 'tu-password'; // Contraseña del correo
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;
+    $mail->Port = 465;  
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;  
+    $mail->Username = 'hola@visiongraphix.co'; // Correo desde el cual enviarás
+    $mail->Password = 'V316g791_'; // Contraseña del correo
 
     // Destinatarios
-    $mail->setFrom('tu-correo@tu-dominio.com', 'Santiago Cabrera');
-    $mail->addAddress('tucorreo@dominio.com', 'Santiago Cabrera'); // Tu correo
+    $mail->setFrom('hola@visiongraphix.co', 'VisionGrpahix.co');
+    $mail->addAddress('cabreraarizasantiago@gmail.com', 'VisionGrpahix.co'); // Tu correo
+    $mail->addAddress($correo_cliente); // Correo del cliente
 
     // Contenido del correo
     $mail->isHTML(true);
